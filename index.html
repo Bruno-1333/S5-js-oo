@@ -3,10 +3,11 @@
   <head>
     <meta charset="UTF-8">
     <title>Panier de fruits</title>
+    <script src="main.js"></script>
   </head>
   <body>
     <h1>Commander un panier de fruits</h1>
-    <form method="post" action="merci.html">
+    <form id="formPanier" method="post" action="merci.html">
       <table>
         <caption>Votre panier</caption>
         <thead>
@@ -18,22 +19,22 @@
           </tr>
         </thead>
         <tbody>
-          <tr id="Peches">
+          <tr id="Peches" name="nom">
             <td>Sac(s) de pêches</td>
             <td id="prixPeches" class="prix">10</td>
-            <td><input id="nbPeches"></td>
+            <td><input id="nbPeches" type="number" min="0" max="24" value="0" onchange="majSousTotal(this)"></td>
             <td class="totalFruit">0</td>
           </tr>
-          <tr id="Poires">
+          <tr id="Poires"  name="nom">
             <td>Sac(s) de poires</td>
             <td id="prixPoires" class="prix">12</td>
-            <td><input id="nbPoires"></td>
+            <td><input id="nbPoires" type="number" min="0" max="24" value="0" onchange="majSousTotal(this)"></td>
             <td class="totalFruit">0</td>
           </tr>
-          <tr id="Pommes">
+          <tr id="Pommes"  name="nom">
             <td>Sac(s) de pommes</td>
             <td id="prixPommes" class="prix">11</td>
-            <td><input id="nbPommes"></td>
+            <td><input id="nbPommes" type="number" min="0" max="24" value="0" onchange="majSousTotal(this)"></td>
             <td class="totalFruit">0</td>
           </tr>
         </tbody>
@@ -49,10 +50,80 @@
         <input id="conditions" type="checkbox" required>
         <label for="conditions">J'ai lu et j'accepte les conditions de vente.</label>
         <div class="boutons">
-          <input id="submit" type="submit" disabled>
+          <input type="submit" id="submit" value="valider" onclick="function validerPanier() {
+
+          }
+          return validerPanier()"  disabled>
           <input id="reset" type="reset">
         </div>
       </div>
     </form>
   </body>
 </html>
+
+
+
+
+
+
+<!--
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Panier de fruits</title>
+  <script src="main.js"></script>
+</head>
+<body>
+<h1>Commander un panier de fruits</h1>
+<form id="formPanier" method="post" action="merci.html">
+  <table>
+    <caption>Votre panier</caption>
+    <thead>
+    <tr>
+      <td>Item</td>
+      <td>Prix</td>
+      <td>Nombre</td>
+      <td>Sous-total</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr id="peches">
+      <td>Sac(s) de pêches</td>
+      <td id="prixPeches" class="prix">10</td>
+      <td><input id="nbPeches" type="number" min="0" max="24" value="0" onchange="majSousTotal(this)"></td>
+      <td class="totalFruit">0</td>
+    </tr>
+    <tr id="poires">
+      <td>Sac(s) de poires</td>
+      <td id="prixPoires" class="prix">12</td>
+      <td><input id="nbPoires" type="number" min="0" max="24" value="0" onchange="majSousTotal(this)"></td>
+      <td class="totalFruit">0</td>
+    </tr>
+    <tr id="pommes">
+      <td>Sac(s) de pommes</td>
+      <td id="prixPommes" class="prix">11</td>
+      <td><input id="nbPommes" type="number" min="0" max="24" value="0" onchange="majSousTotal(this)"></td>
+      <td class="totalFruit">0</td>
+    </tr>
+    </tbody>
+    <tfoot>
+    <tr>
+      <th class="total" colspan="3">Total</th>
+      <td class="total" id="total"></td>
+    </tr>
+    </tfoot>
+  </table>
+  <p class="error invisible center">La valeur minimale des paniers est de 20$.</p>
+  <div class="center">
+    <input id="conditions" type="checkbox" required>
+    <label for="conditions">J'ai lu et j'accepte les conditions de vente.</label>
+    <div class="boutons">
+      <input type="submit" id="submit" value="Commander" onclick="return validerPanier()" disabled>
+      <input id="reset" type="reset">
+    </div>
+  </div>
+</form>
+</body>
+</html>
+-->
